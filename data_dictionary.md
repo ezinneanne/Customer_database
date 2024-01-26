@@ -57,21 +57,24 @@ Data dictionary for the entities in the school database. This covers the `dbo.tb
 ### For Entity tblProducts
 |Attribute |Description |Data type |Constraint |
 |----------|------------|----------|-----------|
-|Student_number|It uniquely identifies a student.|INT|PRIMARY KEY |
-|Last_name|It is a student's last name |NVARCHAR(50)|NOT NULL|
-|First_name|It is the student first name |NVARCHAR(50)|NOT NULL|
-|Student_address|It is the student address|NVARCHAR(50)|NOT NULL|
-|Student_date_of_birth|It is the student date of birth |NVARCHAR(50)|NOT NULL| 
-|Prog_number|It is a foreign key from Programme. It uniquely identifies the number of each program.|INT|FOREIGN KEY |
-|School_number|It is a foreign from School. It uniquely identifies the number of each school.|INT|FOREIGN KEY| 
+|ProductID|This uniquely identifies the product.|INT|PRIMARY KEY |
+|SupplierID|This is a foreign key. It uniquely identifies the supplier|INT|FOREIGN KEY|
+|CategoryID|It identifies the category|INT|NOT NULL|
+|ProductName|It is the student address|NVARCHAR(50)|NOT NULL|
+|EntryName|It is the name of the entry|NVARCHAR(50)|NOT NULL| 
+|QuantityPerUnit|It is unit value of each quantity.|NVARCHAR(50)|NOT NULL|
+|UnitPrice|It is the unit price of each quantity.|INT|NOT NULL| 
+|UnitsInStock|It is the total units of the items in stock.|NVARCHAR(50)|NOT NULL|
+|UnitsOnOrder|It is the total units of the items ordered.|NVARCHAR(50)|NOT NULL| 
+|ReorderLevel|It is level of reordering.|NVARCHAR(50)|NOT NULL|
+|Discontinued|This is a boolean that checks whether the order was discontinued or not.|NVARCHAR(50)|NOT NULL| 
+
 
 ### For Entity tblOrderDetails
 |Attribute |Description |Data type |Constraint |
 |----------|------------|----------|-----------|
-|Student_number|It uniquely identifies a student.|INT|PRIMARY KEY |
-|Last_name|It is a student's last name |NVARCHAR(50)|NOT NULL|
-|First_name|It is the student first name |NVARCHAR(50)|NOT NULL|
-|Student_address|It is the student address|NVARCHAR(50)|NOT NULL|
-|Student_date_of_birth|It is the student date of birth |NVARCHAR(50)|NOT NULL| 
-|Prog_number|It is a foreign key from Programme. It uniquely identifies the number of each program.|INT|FOREIGN KEY |
-|School_number|It is a foreign from School. It uniquely identifies the number of each school.|INT|FOREIGN KEY| 
+|OrderID|This uniquely identifies the order. It serves as a foreign key and a primary key.|INT|PRIMARY KEY |
+|ProductID|This uniquely identifies each order. It is a foreign key.|INT|FOREIGN KEY|
+|UnitPrice|This is the unit price of each item.|NVARCHAR(50)|NOT NULL|
+|Quantity|This is total quantity ordered.|INT|NULL|
+|Discount|This is discount given.|NVARCHAR(50)|NULL| 
