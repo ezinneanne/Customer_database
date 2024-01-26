@@ -34,7 +34,11 @@ SELECT CustomerID, OrderID, OrderDate, ShippedDate FROM dbo.tblOrders
 iii) Using the ALTER TABLE statement, add a new field(Active) in the tblcustomer. Default it to True.
 
 ```sql
+USE Customer_database;
+GO
 
+ALTER TABLE dbo.tblCustomers
+ADD Active BIT DEFAULT 1;
 ```
 
 iv) Show all orders purchased before September 1, 2012. Display company name, date ordered and total amount of order (include freight).
