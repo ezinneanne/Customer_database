@@ -33,19 +33,50 @@ SELECT CustomerID, OrderID, OrderDate, ShippedDate FROM dbo.tblOrders
 
 iii) Using the ALTER TABLE statement, add a new field(Active) in the tblcustomer. Default it to True.
 
+```sql
+
+```
 
 iv) Show all orders purchased before September 1, 2012. Display company name, date ordered and total amount of order (include freight).
 
+```sql
+
+```
+
 v) Show all orders that have been shipped via Federal Shipping. Display OrderID, ShipName, ShipAddress and CustomerID.
+
+```sql
+SELECT OrderID, ShipName, ShipAddress, CustomerID FROM dbo.tblOrders
+```
 
 vi) Show all customers who have not made purchases in 2011.
 
+```sql
+
+```
+
 vii) Show all products that have never been ordered.
+
+```sql
+
+```
 
 viii) Show products supplied by Supplier A and Supplier B. Display product name and supplier name.
 
+```sql
+
+```
+
 ix) Add a field to tblOrders called TotalSales. Show DDL-ALTER TABLE statement.
 
+```sql
+
+```
+
 x) Using the UPDATE statement, add the total sale for each order based on the order details table.
+
+```sql
+
+```
 
 xi) Write a DDL and DML trigger for any of the table in the above model.
