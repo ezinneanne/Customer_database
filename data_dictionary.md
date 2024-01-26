@@ -28,19 +28,30 @@ Data dictionary for the entities in the school database. This covers the `dbo.tb
 ### For Entity tblOrders
 |Attribute |Description |Data type |Constraint |
 |----------|------------|----------|-----------|
-|Room_id |It is used as a unique identifier for each room. |INT|PRIMARY KEY| 
-|Building |It describes the type of building |NVARCHAR(50)|NOT NULL| 
-|Room_number|It describes the number of each room.|INT|NOT NULL |
-|Capacity |It describes the capacity of the building |NVARCHAR(50)|NOT NULL |
-|Room_Type|It is a foreign key which builds a relationship. It describes the type of room used.|INT|FOREIGN KEY|
+|OrderID|This uniquely identifies the order|INT|PRIMARY KEY| 
+|CustomerID|This is a foreign key. It uniquely identifies the customer|INT|FOREIGN KEY| 
+|EmployeeID|This indentifies each employee|INT|NOT NULL |
+|ShipName|This is the name of the shipping|NVARCHAR(50)|NOT NULL |
+|ShipAddress|This is the address the product is shipped to.|NVARCHAR(50)|NOT NULL|
+|ShipCity|This is city the product is shipped to.|NVARCHAR(50)|NOT NULL| 
+|ShipRegion|This is the region the product is shipped to.|NVARCHAR(50)|NOT NULL| 
+|ShipPostalCode|This is the postal code the product is shipped to.|NVARCHAR(50)|NOT NULL |
+|ShipCountry|This is the country the product is shipped to.|NVARCHAR(50)|NOT NULL |
+|ShipVia|This is route the shipping will pass through.|NVARCHAR(50)|NOT NULL|
+|OrderDate|This is the date the shipping was requested.|Date|NOT NULL| 
+|RequiredDate|This is the date the shipping is expected.|Date|NOT NULL |
+|ShippedDate|This is the date the shipping is made.|Date|NOT NULL |
+|Freight|This is the details of the shipping.|Date|NOT NULL|
+
 
 ### For Entity tblSupplier
 |Attribute |Description |Data type|Constraint |
 |----------|------------|---------|-----------|
-|School_number|It is used to uniquely identify the number of each school.|INT|PRIMARY KEY |
-|School_name|It is used to describe the name of the school.|NVARCHAR(50)|NOT NULL|
-|School_phone|It is the school contact |NVARCHAR(50)|NOT NULL 
-|Room_id|It's a foreign key that describes the relationship between the school and location entity.|INT|FOREIGN KEY| 
+|SupplierID|This uniquely identifies the supplier.|INT|PRIMARY KEY |
+|Name|This is the supplier's name.|NVARCHAR(50)|NOT NULL|
+|Address|The supplier's address|NVARCHAR(50)|NOT NULL 
+|City|The supplier's city.|NVARCHAR(50)|NOT NULL| 
+|Province|The supplier's province.|NVARCHAR(50)|NOT NULL| 
 
 
 ### For Entity tblProducts
