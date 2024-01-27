@@ -110,7 +110,12 @@ WHERE s.Supplier_Name IN ('Supplier A', 'Supplier B');
 ix) Add a field to tblOrders called TotalSales. Show DDL-ALTER TABLE statement.
 
 ```sql
+USE [Customer_database]
+GO
 
+ALTER TABLE dbo.tblOrders
+ADD TotalSales DECIMAL(10, 2);
+GO
 ```
 
 x) Using the UPDATE statement, add the total sale for each order based on the order details table.
