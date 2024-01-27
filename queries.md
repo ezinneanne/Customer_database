@@ -44,7 +44,23 @@ ADD Active BIT DEFAULT 1;
 iv) Show all orders purchased before September 1, 2012. Display company name, date ordered and total amount of order (include freight).
 
 ```sql
-
+SELECT
+    c.CompanyName,
+    o.OrderDate,
+    SUM(od.UnitPrice * od.Quantity + o.Freight) AS TotalAmount
+FROM
+    Customer_database.dbo.tblOrders o
+JOIN
+    Customer_database.dbo.tblCustomers c ON c.CustomerID = o.OrderID
+JOIN
+    Customer_database.dbo.tblOrderDetails od ON o.OrderID = od.OrderID
+WHERE
+    o.OrderDate < '2012-09-01'
+GROUP BY
+    c.CompanyName,
+    o.OrderDate,
+    o.Freight,
+    o.OrderID;
 ```
 
 v) Show all orders that have been shipped via Federal Shipping. Display OrderID, ShipName, ShipAddress and CustomerID.
