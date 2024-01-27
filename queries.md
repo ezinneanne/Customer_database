@@ -99,7 +99,12 @@ WHERE od.ProductID IS NULL;
 viii) Show products supplied by Supplier A and Supplier B. Display product name and supplier name.
 
 ```sql
-
+SELECT
+    p.ProductName, s.Supplier_Name
+FROM
+    Customer_database.dbo.tblProducts p
+INNER JOIN Customer_database.dbo.tblSupplier s ON p.SupplierID = s.SupplierID
+WHERE s.Supplier_Name IN ('Supplier A', 'Supplier B');
 ```
 
 ix) Add a field to tblOrders called TotalSales. Show DDL-ALTER TABLE statement.
