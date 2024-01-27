@@ -72,7 +72,16 @@ SELECT OrderID, ShipName, ShipAddress, CustomerID FROM dbo.tblOrders
 vi) Show all customers who have not made purchases in 2011.
 
 ```sql
-
+SELECT
+    c.CompanyName,
+    c.ContactName
+FROM
+    Customer_database.dbo.tblCustomers c
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM Customer_database.dbo.tblOrders o
+  WHERE o.CustomerID = c.CustomerID AND o.OrderDate >= '2011-01-01' AND o.OrderDate < '2012-01-01'
+);
 ```
 
 vii) Show all products that have never been ordered.
