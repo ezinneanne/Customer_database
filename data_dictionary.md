@@ -11,7 +11,7 @@ Data dictionary for the entities in the school database. This covers the `dbo.tb
 ### For Entity tblCustomers
 |Attribute |Description |Data type |Constraint |
 |----------|------------|----------|-----------|
-|CompanyID |This uniquely identifies the company|INT|Primary key |
+|Customer ID |This uniquely identifies the customer|INT|Primary key |
 |CompanyName|This is the name of the company|NVARCHAR (50)|NOT NULL|
 |ContactName |This is contact of the company|NVARCHAR(50)|NOT NULL|
 |CompanyName|This is the name of the company|NVARCHAR (50)|NOT NULL|
