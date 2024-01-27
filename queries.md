@@ -125,3 +125,18 @@ x) Using the UPDATE statement, add the total sale for each order based on the or
 ```
 
 xi) Write a DDL and DML trigger for any of the table in the above model.
+
+**DDL Trigger**
+
+```sql
+ALTER TABLE dbo.tblOrders
+ADD TotalSales DECIMAL(10, 2);
+GO
+```
+
+**DML Triggger**
+```sql
+SELECT
+  OrderID
+FROM dbo.tblOrders;
+```
