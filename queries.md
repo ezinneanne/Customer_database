@@ -87,7 +87,13 @@ WHERE NOT EXISTS (
 vii) Show all products that have never been ordered.
 
 ```sql
-
+SELECT
+    p.ProductID,
+    p.ProductName
+FROM
+    Customer_database.dbo.tblProducts p
+LEFT JOIN Customer_database.dbo.tblOrderDetails od ON p.ProductID = od.ProductID
+WHERE od.ProductID IS NULL;
 ```
 
 viii) Show products supplied by Supplier A and Supplier B. Display product name and supplier name.
