@@ -121,7 +121,22 @@ GO
 x) Using the UPDATE statement, add the total sale for each order based on the order details table.
 
 ```sql
+USE [Customer_database]
+GO
 
+UPDATE dbo.tblOrders  
+SET dbo.tblOrders.TotalSales = (
+ SELECT SUM(od.UnitPrice * od.Quantity)
+ FROM dbo.tblOrderDetails od
+ WHERE od.OrderID = dbo.tblOrders.OrderID
+);
+GO
+
+||
+
+UPDATE dbo.tblOrders
+SET TotalSales = 200.77
+WHERE OrderID = 0007
 ```
 
 xi) Write a DDL and DML trigger for any of the table in the above model.
